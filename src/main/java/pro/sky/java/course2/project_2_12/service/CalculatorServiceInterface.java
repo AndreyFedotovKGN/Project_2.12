@@ -7,6 +7,5 @@ public interface CalculatorServiceInterface {
     public int multiple(Integer a, Integer b);
     public double divide(Integer a, Integer b);
 
-    public String welcome();
 
 }

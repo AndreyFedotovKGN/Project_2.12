@@ -22,12 +22,10 @@ public class CalculatorService implements CalculatorServiceInterface {
 
     @Override
     public double divide(Integer a, Integer b) {
-        if (b == 0) throw new IllegalArgumentException("Неверное значение");
+        if (b == 0) {
+            throw new IllegalArgumentException("На ноль делить нельзя");
+        }
         return (double)a / b;
     }
 
-    @Override
-    public String welcome() {
-        return "Добро пожаловать в калькулятор";
-    }
 }

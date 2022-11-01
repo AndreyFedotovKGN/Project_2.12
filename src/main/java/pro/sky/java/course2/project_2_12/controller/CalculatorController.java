@@ -16,12 +16,6 @@ public class CalculatorController {
         this.calculatorService = calculatorService;
     }
 
-    @GetMapping()
-    public String welcome() {
-        String welcome = calculatorService.welcome();
-        return welcome;
-    }
-
     @GetMapping("/plus")
     public String plus(@RequestParam(name = "num1",required = false) Integer a,
                     @RequestParam(name = "num2",required = false) Integer b) {
@@ -49,13 +43,7 @@ public class CalculatorController {
     @GetMapping("/divide")
     public String divide(@RequestParam(name = "num1",required = false) Integer a,
                            @RequestParam(name = "num2",required = false) Integer b) {
-        if (a == null || b == null) return "значение не передано";
-        double divide;
-        try {
-            divide = calculatorService.divide(a, b);
-        } catch (Throwable e) {
-            return e.getMessage();
-        }
+        double divide = calculatorService.divide(a, b);
         return a + " / " + b + " = " + divide;
     }
 
